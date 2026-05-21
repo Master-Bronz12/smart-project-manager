@@ -1,0 +1,51 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fond avec dégradé -->
+  <rect width="200" height="200" rx="45" fill="url(#bgGrad)" filter="url(#shadow)" />
+  
+  <!-- Cercle lumineux intérieur -->
+  <circle cx="100" cy="80" r="45" fill="url(#sparkGrad)" opacity="0.15" />
+  <circle cx="100" cy="80" r="30" fill="url(#sparkGrad)" opacity="0.1" />
+  
+  <!-- Icône principale : courbe de progression -->
+  <path d="M55 110 L80 85 L110 100 L145 65" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+  
+  <!-- Cercle de validation -->
+  <circle cx="80" cy="85" r="20" stroke="white" stroke-width="3" fill="none" filter="url(#glow)"/>
+  <path d="M73 85 L78 90 L87 80" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Point d'arrivée -->
+  <circle cx="145" cy="65" r="5" fill="white" filter="url(#glow)"/>
+  
+  <!-- Étincelles de qualité -->
+  <path d="M160 45 L165 40" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <path d="M170 55 L175 50" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="168" cy="42" r="2" fill="white" opacity="0.7"/>
+  
+  <!-- Texte SPM -->
+  <text x="100" y="170" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="white" text-anchor="middle" letter-spacing="3" filter="url(#glow)">SPM</text>
+  
+  <!-- Sous-titre -->
+  <text x="100" y="187" font-family="'Segoe UI', Arial, sans-serif" font-size="9" font-weight="600" fill="white" opacity="0.8" text-anchor="middle" letter-spacing="1.5">SMART PROJECT MANAGER</text>
+</svg>

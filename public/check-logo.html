@@ -1,0 +1,15 @@
+﻿// Colle ce code dans la console navigateur (F12) après avoir téléchargé ton logo HD
+// Pour tester la qualité de ton nouveau logo
+
+const img = new Image();
+img.src = "/logo.png";
+img.onload = () => {
+  console.log(`✅ Logo chargé : ${img.width}x${img.height} pixels`);
+  if (img.width >= 512) {
+    console.log("🎉 Excellente qualité !");
+  } else if (img.width >= 256) {
+    console.log("👍 Bonne qualité");
+  } else {
+    console.log("⚠️ Qualité à améliorer (moins de 256px)");
+  }
+};
